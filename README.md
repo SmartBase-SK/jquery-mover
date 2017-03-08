@@ -32,14 +32,21 @@ This will move element after target on screens under 700px.
 <div id="target">
 </div>
 ```
-## Simple usage
-This will move element after target on screens under 700px.
+## Element subset
+We can call mover also only on subset of elements to better specify the context and improve execution time.
 ```html
-<div data-mover-target="#target" data-mover-range="-700">
-  <p>I am moved if the screen is under 700.</p>
+<div class="moving-section">
+    <div data-mover-target="#target" data-mover-range="-700">
+      <p>I am moved if the screen is under 700.</p>
+    </div>
+    <div id="target">
+    </div>
 </div>
-<div id="target">
-</div>
+```
+```javascript
+$(document).ready(function(){
+  $(".moving-section").initMover();
+});
 ```
 
 ## Move before
